@@ -1,0 +1,30 @@
+{
+  "name": "ui-nextjs-boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "design-web-components": "file:design-web-components-v0.0.1.tgz",
+    "next": "^11.0.0",
+    "nextjs-magnolia-connector": "file:nextjs-magnolia-connector-v0.1.1.tgz",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "shared-web-components": "file:shared-web-components-0.0.1.tgz"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.1",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "2.3.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,md,html}": "prettier --write"
+  }
+}
