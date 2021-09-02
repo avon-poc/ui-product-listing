@@ -10,6 +10,7 @@ const config = {
         // 'spa-lm:pages/Home': Home,
         'spa-lm:pages/next-basic': Offer,
         'spa-lm:pages/next-category': Category,
+        'spa-lm:pages/next-offer': Offer,
 
         'spa-lm:components/Text': Text,
         'spa-lm:components/List': List,

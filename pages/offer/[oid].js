@@ -26,6 +26,9 @@ export async function getServerSideProps(context) {
   console.log('route', context.resolvedUrl);
   return {
     props: {
+      pageData : {
+        offername: context.params.oid
+      },
       ...page,
       headerComponent,
       footerComponent
@@ -35,6 +38,7 @@ export async function getServerSideProps(context) {
 
 
 export default function App({
+  pageData,
   page,
   templateDefinitions,
   headerComponent,
@@ -48,13 +52,14 @@ export default function App({
   return (
     <div className={styles.container}>
       <Head>
-        <title>App</title>
+        <title>{pageData.offername}</title>
       </Head>
       <div className={styles.header} dangerouslySetInnerHTML={{__html: headerComponent}}/>
       <main className={styles.main}>
         <div className="magnolia">{page && <EditablePage content={page} config={config} templateDefinitions={templateDefinitions} />}</div>
       </main>
       <div className={styles.footer} dangerouslySetInnerHTML={{__html: footerComponent}}/>
+      <bottom-navigation />
     </div>
   );
 }

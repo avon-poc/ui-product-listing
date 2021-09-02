@@ -1,26 +1,19 @@
 import React, { useEffect } from 'react';
-import dynamic from 'next/dynamic'
-import {
-  getCookie,
-} from '../../helper/uiHelper'
 import { defineCustomElements } from 'design-web-components/loader'
 import styles from '../../styles/Home.module.css';
 import { products } from '../../mock/products'
+import { isObjectNotEmpty, displayPrice } from 'ui-utils'
 
-const {
-  EditableArea,
-  // SwcImg
-} = {
-  EditableArea: dynamic(() =>
-    import('nextjs-magnolia-connector').then(module => module.EditableArea)
-  ),
-  // SwcImg: dynamic(() =>
-  //   import('ui-design-web-components').then(module => module.SwcImg)
-  // ),
-}
-  ;
-// const uiModule = import('ui-design-web-components').then((a) => a.SwcImg)
-// console.log(uiModule);
+// const displayPrice = (n) => {
+//   const format = new Intl.NumberFormat('en-US', {
+//     style: 'currency',
+//     currency: 'USD'
+//   });
+
+  // or use toLocaleString()
+//   return format.format(n);
+// };
+
 function Category(props) {
   const { title, main, metadata, descText } = props;
   // console.log(ui)
@@ -28,7 +21,6 @@ function Category(props) {
   useEffect(() => {
     defineCustomElements()
   }, [])
-
 
   return (
     <div>
@@ -39,7 +31,7 @@ function Category(props) {
         <ui-heading label="Make-up" level="h1" />
       </div>
       <div className={styles.product_listing}>
-        {products.map((product, i) =>
+        {isObjectNotEmpty(products) ? products.map((product, i) =>
 
           <ui-product_card
             key={i}
@@ -56,7 +48,7 @@ function Category(props) {
             cardbgcolor={product.cardbgcolor}
           />
 
-        )}
+        ) : 'No Product Available.'}
       </div>
     </div>
   );
