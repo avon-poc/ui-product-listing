@@ -42,7 +42,7 @@ export default function App({
   }, []);
   console.log(",,,pages");
   return (
-    <div className={styles.container}>
+    <div data-testid="avon-container" className={styles.container}>
       <Head>
         <title>App</title>
       </Head>
