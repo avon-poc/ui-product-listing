@@ -59,7 +59,6 @@ export default function App({
         <div className="magnolia">{page && <EditablePage content={page} config={config} templateDefinitions={templateDefinitions} />}</div>
       </main>
       <div className={styles.footer} dangerouslySetInnerHTML={{__html: footerComponent}}/>
-      <bottom-navigation />
     </div>
   );
 }

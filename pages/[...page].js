@@ -65,7 +65,6 @@ export default function App({
         className={styles.footer}
         dangerouslySetInnerHTML={{ __html: footerComponent }}
       />
-      <bottom-navigation />
     </div>
   );
 }
