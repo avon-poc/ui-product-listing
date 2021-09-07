@@ -23,8 +23,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function Error({
-  page,
-  templateDefinitions,
   headerComponent,
   footerComponent
 }){

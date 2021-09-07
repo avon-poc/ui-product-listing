@@ -6,7 +6,6 @@ import { defineCustomElements } from 'shared-web-components/loader'
 import { useEffect } from "react";
 import { getPage} from 'nextjs-magnolia-connector'
 import { createComponent, getHeaderContent, getFooterContent } from "../../src/utils";
-import Offer from '../../src/pages/offers'
 
 const {
   EditablePage

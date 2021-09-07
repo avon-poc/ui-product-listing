@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { defineCustomElements } from 'design-web-components/loader'
 import styles from '../../styles/Home.module.css';
 import { products } from '../../mock/products'
-import { isObjectNotEmpty, displayPrice } from 'ui-utils'
+import { isObjectNotEmpty } from 'ui-utils'
 import dynamic from "next/dynamic";
 
 
@@ -13,7 +13,7 @@ const { EditableArea } = {
 };
 
 function Category(props) {
-  const { title, main, metadata, descText } = props;
+  const { main, metadata } = props;
   // console.log(ui)
   useEffect(() => {
     defineCustomElements()
