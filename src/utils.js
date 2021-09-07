@@ -1,6 +1,6 @@
 import * as h from "shared-web-components/hydrate";
 import { getMgnlApp } from "nextjs-magnolia-connector";
-import { getCategoryNavTree } from "../pages/api/mock";
+import { getCategoryNavTree, getCart, getWishlist } from "../pages/api/mock";
 
 export async function createComponent(selector, content, options) {
   const b64 = Buffer.from(JSON.stringify(content)).toString("base64");
@@ -22,9 +22,13 @@ export async function getHeaderContent(context) {
   });
 
   const categories = await getCategoryNavTree();
+  const cart = await getCart();
+  const wishlist = await getWishlist();
   return {
     settings,
     categories,
+    cart,
+    wishlist
   };
 }
 

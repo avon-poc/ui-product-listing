@@ -65,6 +65,8 @@ export default function App({
         className={styles.footer}
         dangerouslySetInnerHTML={{ __html: footerComponent }}
       />
+      <bottom-navigation></bottom-navigation>
+      <cart-sidebar></cart-sidebar>
     </div>
   );
 }

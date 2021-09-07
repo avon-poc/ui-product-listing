@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import {
   getCookie,
 } from '../../helper/uiHelper'
-import { defineCustomElements } from 'design-web-components/loader'
+import { defineCustomElements } from 'shared-web-components/loader'
 
 const {
   EditableArea,
