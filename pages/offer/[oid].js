@@ -6,7 +6,6 @@ import { defineCustomElements } from 'shared-web-components/loader'
 import { useEffect } from "react";
 import { getPage} from 'nextjs-magnolia-connector'
 import { createComponent, getHeaderContent, getFooterContent } from "../../src/utils";
-import Offer from '../../src/pages/offers'
 
 const {
   EditablePage
@@ -26,6 +25,9 @@ export async function getServerSideProps(context) {
   console.log('route', context.resolvedUrl);
   return {
     props: {
+      pageData : {
+        offername: context.params.oid
+      },
       ...page,
       headerComponent,
       footerComponent
@@ -35,6 +37,7 @@ export async function getServerSideProps(context) {
 
 
 export default function App({
+  pageData,
   page,
   templateDefinitions,
   headerComponent,
@@ -48,7 +51,7 @@ export default function App({
   return (
     <div className={styles.container}>
       <Head>
-        <title>App</title>
+        <title>{pageData.offername}</title>
       </Head>
       <div className={styles.header} dangerouslySetInnerHTML={{__html: headerComponent}}/>
       <main className={styles.main}>

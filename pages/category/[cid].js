@@ -22,9 +22,12 @@ export async function getServerSideProps(context) {
   const footerComponent = await createComponent('avon-footer', footerContent);
   context.resolvedUrl = '/category'
   const page = await getPage(context);
-  console.log('route', context.resolvedUrl);
+  console.log('route', context.params);
   return {
     props: {
+      pageData : {
+        catname: context.params.cid
+      },
       ...page,
       headerComponent,
       footerComponent
@@ -35,6 +38,7 @@ export async function getServerSideProps(context) {
 
 export default function App({
   page,
+  pageData,
   templateDefinitions,
   headerComponent,
   footerComponent
@@ -46,11 +50,11 @@ export default function App({
   return (
     <div className={styles.container}>
       <Head>
-        <title>App</title>
+        <title>{pageData.catname} | Avon</title>
       </Head>
       <div className={styles.header} dangerouslySetInnerHTML={{__html: headerComponent}}/>
       <main className={styles.main}>
-        <div className="magnolia">{page && <EditablePage content={page} config={config} templateDefinitions={templateDefinitions} />}</div>
+        <div className={styles.magnolia}>{page && <EditablePage content={page} config={config} templateDefinitions={templateDefinitions} />}</div>
       </main>
       <div className={styles.footer} dangerouslySetInnerHTML={{__html: footerComponent}}/>
     </div>

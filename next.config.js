@@ -12,13 +12,4 @@ module.exports = {
     defaultLocale: 'en',
     localeDetection: false,
   },
-  async redirects() {
-    return [
-      {
-        source: '/l',
-        destination: '/error',
-        permanent: true,
-      },
-    ]
-  },
 }
