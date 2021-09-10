@@ -10,7 +10,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "design-web-components": "file:design-web-components-v0.0.1.tgz",
+    "design-web-components": "file:design-web-components-0.0.2.tgz",
     "next": "^11.0.0",
     "nextjs-magnolia-connector": "file:nextjs-magnolia-connector-v0.1.1.tgz",
     "react": "17.0.2",
