@@ -2,8 +2,8 @@ import Head from "next/head";
 import config from "../magnolia.config";
 import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
-import { defineCustomElements } from "shared-web-components/loader";
-import { useEffect } from "react";
+import AppHeader from '../src/components/AppHeader'
+import AppFooter from '../src/components/AppFooter'
 import { getPage } from "nextjs-magnolia-connector";
 import {
   createComponent,
@@ -24,6 +24,9 @@ export async function getServerSideProps(context) {
   const page = await getPage(context);
   return {
     props: {
+      pageData : {
+        uid: context.params.cid.toUpperCase()
+      },
       ...page,
       headerComponent,
       footerComponent,
@@ -32,39 +35,23 @@ export async function getServerSideProps(context) {
 }
 
 export default function App({
+  pageData,
   page,
   templateDefinitions,
   headerComponent,
   footerComponent,
 }) {
-  useEffect(() => {
-    defineCustomElements();
-  }, []);
   console.log(",,,pages");
   return (
     <div className={styles.container}>
       <Head>
-        <title>App</title>
+        <title>{pageData?.uid || 'Home'} | Avon</title>
       </Head>
-      <div
-        className={styles.header}
-        dangerouslySetInnerHTML={{ __html: headerComponent }}
-      />
+      <AppHeader headerComponent={headerComponent}/>
       <main className={styles.main}>
-        <div className="magnolia">
-          {page && (
-            <EditablePage
-              content={page}
-              config={config}
-              templateDefinitions={templateDefinitions}
-            />
-          )}
-        </div>
+        <div className={styles.magnolia}>{page && <EditablePage content={page} config={config} templateDefinitions={templateDefinitions} />}</div>
       </main>
-      <div
-        className={styles.footer}
-        dangerouslySetInnerHTML={{ __html: footerComponent }}
-      />
+      <AppFooter footerComponent={footerComponent}/>
     </div>
   );
 }

@@ -26,6 +26,7 @@ const config = {
         
         'spa-lm:components/Text': Text,
         'spa-lm:components/Image': ComponentWrapper('ui-img'),
+        'spa-lm:components/blockTrending': ComponentWrapper('ui-trending-block'),
       },
 };
 
