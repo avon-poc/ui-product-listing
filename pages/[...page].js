@@ -47,7 +47,7 @@ export default function App({
 }) {
   console.log(",,,pages", errorCode);
   return (
-    <div className={styles.container}>
+    <div data-testid="avon-container" className={styles.container}>
       <Head>
         <title>{pageData?.uid || 'Home'} | Avon</title>
       </Head>
