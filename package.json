@@ -15,6 +15,7 @@
     "nextjs-magnolia-connector": "file:nextjs-magnolia-connector-v0.1.1.tgz",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "sass": "^1.39.2",
     "shared-web-components": "file:shared-web-components-0.0.1.tgz",
     "ui-utils": "file:ui-utils-v1.0.8.tgz"
   },
