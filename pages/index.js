@@ -15,6 +15,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       ...page,
+      errorCode: '404',
       headerComponent,
       footerComponent,
     },

@@ -1,4 +1,4 @@
-import styles from "../../styles/Home.module.css";
+import styles from "../../styles/Home.module.scss";
 import { defineCustomElements } from "shared-web-components/loader";
 import { useEffect } from "react";
 

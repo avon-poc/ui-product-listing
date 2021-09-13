@@ -1,6 +1,6 @@
 import Head from "next/head";
 import config from "../magnolia.config";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 import dynamic from "next/dynamic";
 import AppHeader from '../src/components/AppHeader'
 import AppFooter from '../src/components/AppFooter'
@@ -10,6 +10,7 @@ import {
   getHeaderContent,
   getFooterContent,
 } from "../src/utils";
+import Error from '../src/components/Error'
 
 const { EditablePage } = {
   EditablePage: dynamic(() =>
@@ -22,12 +23,14 @@ export async function getServerSideProps(context) {
   const headerComponent = await createComponent("avon-header", headerContent);
   const footerComponent = await createComponent("avon-footer", footerContent);
   const page = await getPage(context);
+  const errorCode = page?.page?.error?.code
   return {
     props: {
-      pageData : {
-        uid: context.params.cid.toUpperCase()
+      pageData: {
+        uid: context?.params?.cid?.toUpperCase() || 'Error Page'
       },
       ...page,
+      errorCode,
       headerComponent,
       footerComponent,
     },
@@ -37,21 +40,26 @@ export async function getServerSideProps(context) {
 export default function App({
   pageData,
   page,
+  errorCode,
   templateDefinitions,
   headerComponent,
   footerComponent,
 }) {
-  console.log(",,,pages");
+  console.log(",,,pages", errorCode);
   return (
     <div className={styles.container}>
       <Head>
         <title>{pageData?.uid || 'Home'} | Avon</title>
       </Head>
-      <AppHeader headerComponent={headerComponent}/>
+      <AppHeader headerComponent={headerComponent} />
       <main className={styles.main}>
-        <div className={styles.magnolia}>{page && <EditablePage content={page} config={config} templateDefinitions={templateDefinitions} />}</div>
+        {errorCode
+          ? <Error statusCode={errorCode} />
+          :
+          <div className={styles.magnolia}>{page && <EditablePage content={page} config={config} templateDefinitions={templateDefinitions} />}</div>
+        }
       </main>
-      <AppFooter footerComponent={footerComponent}/>
+      <AppFooter footerComponent={footerComponent} />
     </div>
   );
 }

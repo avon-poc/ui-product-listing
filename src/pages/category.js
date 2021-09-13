@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { defineCustomElements } from 'design-web-components/loader'
-import styles from '../../styles/Home.module.css';
+import styles from '../../styles/Home.module.scss';
 import { products } from '../../mock/products'
 import { isObjectNotEmpty } from 'ui-utils'
 import dynamic from "next/dynamic";
