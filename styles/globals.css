@@ -1,13 +1,13 @@
 html,
 body {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 html {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
