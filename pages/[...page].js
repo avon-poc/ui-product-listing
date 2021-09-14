@@ -1,4 +1,5 @@
 import Head from "next/head";
+import {createRef, useEffect} from "react";
 import config from "../magnolia.config";
 import styles from "../styles/Home.module.scss";
 import dynamic from "next/dynamic";
@@ -11,6 +12,7 @@ import {
   getFooterContent,
 } from "../src/utils";
 import Error from '../src/components/Error'
+import { getCart } from "./api/mock";
 
 const { EditablePage } = {
   EditablePage: dynamic(() =>
@@ -45,7 +47,15 @@ export default function App({
   headerComponent,
   footerComponent,
 }) {
-  console.log(",,,pages", errorCode);
+  const cartSidebarRef = createRef();
+  useEffect(() => {
+    cartSidebarRef.current.addEventListener('cart:removeItem', async e => {
+      const cart = await getCart();
+      cart.lineItems.pop()
+      const header = document.querySelector('avon-header')
+      header.data = { cart: {...cart} }
+    })
+  }, [cartSidebarRef])
   return (
     <div data-testid="avon-container" className={styles.container}>
       <Head>
@@ -60,6 +70,8 @@ export default function App({
         }
       </main>
       <AppFooter footerComponent={footerComponent} />
+      <bottom-navigation />
+      <cart-sidebar ref={cartSidebarRef} />
     </div>
   );
 }

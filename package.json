@@ -13,13 +13,13 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "design-web-components": "file:design-web-components-0.0.2.tgz",
+    "design-web-components": "file:design-web-components-v0.0.3.tgz",
     "next": "^11.0.0",
     "nextjs-magnolia-connector": "file:nextjs-magnolia-connector-v0.1.1.tgz",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sass": "^1.39.2",
-    "shared-web-components": "file:shared-web-components-0.0.1.tgz",
+    "shared-web-components": "file:shared-web-components-v0.0.3.tgz",
     "ui-utils": "file:ui-utils-v1.0.8.tgz"
   },
   "devDependencies": {

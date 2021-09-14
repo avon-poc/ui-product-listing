@@ -2431,9 +2431,264 @@ const categories = {
   stale: false,
 };
 
+const cart = {
+  "id": "6a277a2f-7e4b-4e30-8605-fec58d89445b",
+  "customerId": null,
+  "customerEmail": null,
+  "lineItems": [
+    {
+      "id": "8061415a-4e88-498e-8aa5-6d5e15c92e5f",
+      "productId": "fd43d9ee-dcc8-450d-89df-a9f7b2eb2693",
+      "name": "Anew Dark Circle Corrector Dual Eye System - 20ml",
+      "productSlug": "product_16422_anew-dark-circle-corrector-dual-eye-system-20ml",
+      "quantity": 1,
+      "discountedPricePerQuantity": [],
+      "variant": {
+        "id": 1,
+        "sku": "16422-212398420775",
+        "price": {
+          "tiers": null,
+          "value": {
+            "centAmount": 1320,
+            "__typename": "Money"
+          },
+          "discounted": null,
+          "__typename": "ProductPrice"
+        },
+        "images": [
+          {
+            "url": "https://www.shopwithmyrep.co.uk/assets/en-gb/images/product/prod_1204412_1_613x613.jpg",
+            "label": "Gallery",
+            "__typename": "Image"
+          },
+          {
+            "url": "https://www.shopwithmyrep.co.uk/assets/en-gb/images/product/prod_1204412_1_185x185.jpg",
+            "label": "Thumbnail",
+            "__typename": "Image"
+          }
+        ],
+        "attributesRaw": [
+          {
+            "name": "brandId",
+            "value": "338",
+            "attributeDefinition": {
+              "type": {
+                "name": "text",
+                "__typename": "TextAttributeDefinitionType"
+              },
+              "label": "Brand ID",
+              "__typename": "AttributeDefinition"
+            },
+            "__typename": "RawProductAttribute"
+          },
+          {
+            "name": "startDate",
+            "value": "2020-05-01T00:00:00.000Z",
+            "attributeDefinition": {
+              "type": {
+                "name": "datetime",
+                "__typename": "DateTimeAttributeDefinitionType"
+              },
+              "label": "Start Date",
+              "__typename": "AttributeDefinition"
+            },
+            "__typename": "RawProductAttribute"
+          },
+          {
+            "name": "endDate",
+            "value": "2021-04-30T00:00:00.000Z",
+            "attributeDefinition": {
+              "type": {
+                "name": "datetime",
+                "__typename": "DateTimeAttributeDefinitionType"
+              },
+              "label": "End Date",
+              "__typename": "AttributeDefinition"
+            },
+            "__typename": "RawProductAttribute"
+          },
+          {
+            "name": "brandName",
+            "value": "Anew",
+            "attributeDefinition": {
+              "type": {
+                "name": "text",
+                "__typename": "TextAttributeDefinitionType"
+              },
+              "label": "Brand Name",
+              "__typename": "AttributeDefinition"
+            },
+            "__typename": "RawProductAttribute"
+          },
+          {
+            "name": "finishedStockCode",
+            "value": "1379694",
+            "attributeDefinition": {
+              "type": {
+                "name": "text",
+                "__typename": "TextAttributeDefinitionType"
+              },
+              "label": "Finished Stock Code",
+              "__typename": "AttributeDefinition"
+            },
+            "__typename": "RawProductAttribute"
+          }
+        ],
+        "__typename": "ProductVariant"
+      },
+      "price": {
+        "discounted": null,
+        "value": {
+          "type": "centPrecision",
+          "currencyCode": "GBP",
+          "centAmount": 1320,
+          "fractionDigits": 2,
+          "__typename": "Money"
+        },
+        "__typename": "ProductPrice"
+      },
+      "__typename": "LineItem"
+    },
+    {
+      "id": "f8dc7ac9-2191-4467-8b7c-a87fd6e42d81",
+      "productId": "361551a5-8d27-41a2-b17e-fbfb1edbc65e",
+      "name": "Anew Lifting Dual Eye System - 20ml",
+      "productSlug": "product_16421_anew-lifting-dual-eye-system-20ml",
+      "quantity": 1,
+      "discountedPricePerQuantity": [],
+      "variant": {
+        "id": 1,
+        "sku": "16421-212398420774",
+        "price": {
+          "tiers": null,
+          "value": {
+            "centAmount": 1320,
+            "__typename": "Money"
+          },
+          "discounted": null,
+          "__typename": "ProductPrice"
+        },
+        "images": [
+          {
+            "url": "https://www.shopwithmyrep.co.uk/assets/en-gb/images/product/prod_1204411_1_613x613.jpg",
+            "label": "Gallery",
+            "__typename": "Image"
+          },
+          {
+            "url": "https://www.shopwithmyrep.co.uk/assets/en-gb/images/product/prod_1204411_1_185x185.jpg",
+            "label": "Thumbnail",
+            "__typename": "Image"
+          }
+        ],
+        "attributesRaw": [
+          {
+            "name": "brandId",
+            "value": "338",
+            "attributeDefinition": {
+              "type": {
+                "name": "text",
+                "__typename": "TextAttributeDefinitionType"
+              },
+              "label": "Brand ID",
+              "__typename": "AttributeDefinition"
+            },
+            "__typename": "RawProductAttribute"
+          },
+          {
+            "name": "startDate",
+            "value": "2020-05-01T00:00:00.000Z",
+            "attributeDefinition": {
+              "type": {
+                "name": "datetime",
+                "__typename": "DateTimeAttributeDefinitionType"
+              },
+              "label": "Start Date",
+              "__typename": "AttributeDefinition"
+            },
+            "__typename": "RawProductAttribute"
+          },
+          {
+            "name": "endDate",
+            "value": "2021-04-30T00:00:00.000Z",
+            "attributeDefinition": {
+              "type": {
+                "name": "datetime",
+                "__typename": "DateTimeAttributeDefinitionType"
+              },
+              "label": "End Date",
+              "__typename": "AttributeDefinition"
+            },
+            "__typename": "RawProductAttribute"
+          },
+          {
+            "name": "brandName",
+            "value": "Anew",
+            "attributeDefinition": {
+              "type": {
+                "name": "text",
+                "__typename": "TextAttributeDefinitionType"
+              },
+              "label": "Brand Name",
+              "__typename": "AttributeDefinition"
+            },
+            "__typename": "RawProductAttribute"
+          },
+          {
+            "name": "finishedStockCode",
+            "value": "1379693",
+            "attributeDefinition": {
+              "type": {
+                "name": "text",
+                "__typename": "TextAttributeDefinitionType"
+              },
+              "label": "Finished Stock Code",
+              "__typename": "AttributeDefinition"
+            },
+            "__typename": "RawProductAttribute"
+          }
+        ],
+        "__typename": "ProductVariant"
+      },
+      "price": {
+        "discounted": null,
+        "value": {
+          "type": "centPrecision",
+          "currencyCode": "GBP",
+          "centAmount": 1320,
+          "fractionDigits": 2,
+          "__typename": "Money"
+        },
+        "__typename": "ProductPrice"
+      },
+      "__typename": "LineItem"
+    }
+  ],
+  "totalPrice": {
+    "centAmount": 2640,
+    "__typename": "Money"
+  },
+  "shippingAddress": null,
+  "billingAddress": null,
+  "customer": null,
+  "taxedPrice": null,
+  "paymentInfo": null,
+  "shippingInfo": null,
+  "discountCodes": [],
+  "refusedGifts": [],
+  "custom": null,
+  "cartState": "Active",
+  "version": 7,
+  "__typename": "Cart"
+};
+
 async function getCategories() {
   return Promise.resolve(categories);
 }
+
+export async function getCart() {
+  return Promise.resolve(cart);
+}
+
 export async function getCategoryNavTree() {
   const categoryResponse = await getCategories();
   return categoryResponse.data.rest &&
