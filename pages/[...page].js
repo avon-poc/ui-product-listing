@@ -9,10 +9,10 @@ import { getPage } from "nextjs-magnolia-connector";
 import {
   createComponent,
   getHeaderContent,
-  getFooterContent,
 } from "../src/utils";
 import Error from '../src/components/Error'
 import { getCart } from "./api/mock";
+import {defineCustomElements} from "shared-web-components/loader";
 
 const { EditablePage } = {
   EditablePage: dynamic(() =>
@@ -21,9 +21,8 @@ const { EditablePage } = {
 };
 export async function getServerSideProps(context) {
   const headerContent = await getHeaderContent(context);
-  const footerContent = await getFooterContent(context);
   const headerComponent = await createComponent("avon-header", headerContent);
-  const footerComponent = await createComponent("avon-footer", footerContent);
+  const footerComponent = await createComponent("avon-footer", null);
   const page = await getPage(context);
   const errorCode = page?.page?.error?.code
   return {
@@ -49,6 +48,7 @@ export default function App({
 }) {
   const cartSidebarRef = createRef();
   useEffect(() => {
+    defineCustomElements();
     cartSidebarRef.current.addEventListener('cart:removeItem', async e => {
       const cart = await getCart();
       cart.lineItems.pop()
