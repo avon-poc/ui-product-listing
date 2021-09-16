@@ -19,6 +19,7 @@ export default function App({
 }) {
   const cartSidebarRef = createRef();
   useEffect(() => {
+    defineCustomElements();
     cartSidebarRef.current.addEventListener('cart:removeItem', async e => {
       const cart = await getCart();
       cart.lineItems.pop()

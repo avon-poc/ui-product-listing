@@ -4,9 +4,8 @@ import App from '../[...page]';
 
 export async function getServerSideProps(context) {
   const headerContent = await getHeaderContent(context);
-  const footerContent = await getFooterContent(context);
   const headerComponent = await createComponent('avon-header', headerContent);
-  const footerComponent = await createComponent('avon-footer', footerContent);
+  const footerComponent = await createComponent('avon-footer', null);
   context.resolvedUrl = '/offer'
   const page = await getPage(context);
   console.log('route', context.resolvedUrl);

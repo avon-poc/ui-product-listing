@@ -1,4 +1,6 @@
 import React from 'react';
+import { UiProduct_card, UiHeading } from 'design-components'
+
 import styles from '../../styles/Home.module.scss';
 import { products } from '../../mock/products'
 import { isParamsNotEmpty } from 'ui-utils'
@@ -23,12 +25,12 @@ function Category(props) {
         />
       )}
       <div>
-        <ui-heading label="Make-up" level="h1" />
+        <UiHeading label="Make-up" level="h1" />
       </div>
       <div className={styles.product_listing}>
         {isParamsNotEmpty(products) ? products.map((product, i) =>
 
-          <ui-product_card
+          <UiProduct_card
             key={i}
             image={product.image}
             imgwidth={340}
