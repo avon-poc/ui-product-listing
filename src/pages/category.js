@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
-import { defineCustomElements } from 'design-web-components/loader'
+import React from 'react';
 import styles from '../../styles/Home.module.scss';
 import { products } from '../../mock/products'
-import { isObjectNotEmpty } from 'ui-utils'
+import { isParamsNotEmpty } from 'ui-utils'
 import dynamic from "next/dynamic";
 
 
@@ -14,10 +13,6 @@ const { EditableArea } = {
 
 function Category(props) {
   const { main, metadata } = props;
-  // console.log(ui)
-  useEffect(() => {
-    defineCustomElements()
-  }, [])
 
   return (
     <div>
@@ -31,7 +26,7 @@ function Category(props) {
         <ui-heading label="Make-up" level="h1" />
       </div>
       <div className={styles.product_listing}>
-        {isObjectNotEmpty(products) ? products.map((product, i) =>
+        {isParamsNotEmpty(products) ? products.map((product, i) =>
 
           <ui-product_card
             key={i}

@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React  from "react";
 import dynamic from "next/dynamic";
 import { getCookie } from "../../helper/uiHelper";
-import { defineCustomElements } from "design-web-components/loader";
 
 const { EditableArea } = {
   EditableArea: dynamic(() =>
@@ -10,9 +9,6 @@ const { EditableArea } = {
 };
 function Home(props) {
   const { title, main, metadata, descText } = props;
-  useEffect(() => {
-    defineCustomElements();
-  }, []);
 
   return (
     <div>
