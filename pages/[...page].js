@@ -6,7 +6,6 @@ import AppFooter from '../src/components/AppFooter'
 
 import Error from '../src/components/Error'
 import { defineCustomElements } from "shared-web-components/loader";
-import { getCart } from "./api/mock";
 
 export { getServerSideProps } from "../src/utils";
 
@@ -21,10 +20,10 @@ export default function App({
   useEffect(() => {
     defineCustomElements();
     cartSidebarRef.current.addEventListener('cart:removeItem', async e => {
-      const cart = await getCart();
-      cart.lineItems.pop()
-      const header = document.querySelector('avon-header')
-      header.data = { cart: {...cart} }
+      // const cart = await getCart();
+      // cart.lineItems.pop()
+      // const header = document.querySelector('avon-header')
+      // header.data = { cart: {...cart} }
     })
   }, [cartSidebarRef])
   return (

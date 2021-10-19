@@ -1,4 +1,5 @@
 export const products = [{
+  sku: '16912-181',
   image: 'https://www.shopwithmyrep.co.uk//assets/en-gb/images/product/prod_1223000_1_613x613.jpg',
   imgwidth: '216',
   imgheight: '326',
