@@ -6,9 +6,8 @@ import { products } from '../../mock/products'
 import { isParamsNotEmpty } from 'ui-utils'
 import dynamic from "next/dynamic";
 
-async function addProductToCart({ sku, qty = 1 }) { // https://www.avon.com
-  console.log('asdf', sku)
-  const res = await fetch('https://*..com/cart',
+async function addProductToCart({ sku, qty = 1 }) {
+  const res = await fetch('http://localhost:3000/l/api/cart',
     {
       method: 'POST',
       body: JSON.stringify({
@@ -33,11 +32,9 @@ const { EditableArea } = {
 
 function Category(props) {
   const { main, metadata } = props;
-  console.log('asdf', main, metadata)
   const productsRef = createRef();
   useEffect(() => {
     productsRef.current.addEventListener('cart:addItem', async e => {
-      console.log('asdf')
       const data = await addProductToCart(e.details)
       const header = document.querySelector('avon-header')
       header.data = { cart: {...data} }

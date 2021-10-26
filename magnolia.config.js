@@ -17,7 +17,7 @@ const config = {
 
         'spa-lm:components/Text': Text,
         'spa-lm:components/Image': UiImg,
-        'spa-lm:components/blockTrending': UiTrendingBlock,
+        'spa-lm:components/blockTrending': UiTrendingBlock
       },
 };
 

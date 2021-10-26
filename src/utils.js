@@ -18,7 +18,6 @@ export async function createComponent(selector) {
 
 export async function createMgnlComponent(context) {
   const data = await getPage(context);
-  console.log('asdf', JSON.stringify(data))
   const tmp = renderToString(<ui-box_container>
     <EditablePage content={data.page} config={config} templateDefinitions={data.templateDefinitions} />
   </ui-box_container>)
@@ -27,7 +26,7 @@ export async function createMgnlComponent(context) {
 
   const part = res.html
     .split(`<ui-box_container data-reactroot`)[1]
-    .split(`</ui-box_container>sadfasdf</body>`)[0];
+    .split(`</ui-box_container></body>`)[0];
 
   return [data.page?.errorCode, `<ui-box_container ${part}</ui-box_container>`]
 }
