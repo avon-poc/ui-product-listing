@@ -8,6 +8,10 @@ html {
     visibility: hidden;
 }
 
+html.hydrated {
+    visibility: inherit;
+}
+
 * {
     box-sizing: border-box;
 }
