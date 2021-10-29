@@ -7,6 +7,8 @@ import AppFooter from "../src/components/AppFooter";
 import { getPage } from "nextjs-magnolia-connector";
 import { createComponent } from "../src/utils";
 import Error from "../src/components/Error";
+import { defineCustomElements } from "shared-web-components/loader";
+import { useEffect } from "react";
 
 const { EditablePage } = {
   EditablePage: dynamic(() =>
@@ -39,6 +41,9 @@ export default function App({
   headerComponent,
   footerComponent,
 }) {
+  useEffect(() => {
+    defineCustomElements();
+  }, []);
   console.log(",,,pages", errorCode);
   return (
     <div data-testid="avon-container" className={styles.container}>

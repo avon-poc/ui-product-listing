@@ -12,7 +12,7 @@ import Item from "./src/components/Item";
 import { defineCustomElements } from "design-web-components/loader";
 
 const ComponentWrapper = (tag) => {
-  defineCustomElements();
+  // defineCustomElements();
   return () => React.createElement(tag);
 };
 
@@ -24,8 +24,8 @@ const config = {
     "spa-lm:pages/next-basic": Home,
 
     "spa-lm:components/Text": Text,
-    "spa-lm:components/Image": ComponentWrapper("ui-img"),
-    "spa-lm:components/blockTrending": ComponentWrapper("ui-trending-block"),
+    "spa-lm:components/Image": Image,
+    "spa-lm:components/blockTrending": Text,
   },
 };
 
