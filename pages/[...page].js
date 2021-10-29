@@ -8,6 +8,7 @@ import { getPage } from "nextjs-magnolia-connector";
 import { createComponent } from "../src/utils";
 import Error from "../src/components/Error";
 import { defineCustomElements } from "shared-web-components/loader";
+import { defineCustomElements as defineDesignCustomElements } from "design-web-components/loader";
 import { useEffect } from "react";
 
 const { EditablePage } = {
@@ -43,6 +44,7 @@ export default function App({
 }) {
   useEffect(() => {
     defineCustomElements();
+    defineDesignCustomElements();
   }, []);
   console.log(",,,pages", errorCode);
   return (
@@ -66,6 +68,7 @@ export default function App({
           </div>
         )}
       </main>
+      <ui-img src="https://www.shopwithmyrep.co.uk/mediamarket-uk/10280/swmr_p1new_desktop-mob_halloween_unq_cf06dfbd5993400aa0e16b0e20748a77.jpg" />
       <AppFooter footerComponent={footerComponent} />
     </div>
   );
