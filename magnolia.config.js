@@ -6,8 +6,6 @@ import Image from './src/components/Image';
 import List from './src/components/List';
 import Item from './src/components/Item';
 
-import { UiTrendingBlock, UiImg } from 'design-components'
-
 const config = {
     componentMappings: {
         // 'spa-lm:pages/Home': Home,
@@ -16,8 +14,8 @@ const config = {
         'spa-lm:pages/next-basic': Home,
 
         'spa-lm:components/Text': Text,
-        'spa-lm:components/Image': UiImg,
-        'spa-lm:components/blockTrending': UiTrendingBlock
+        'spa-lm:components/Image': Image,
+        'spa-lm:components/blockTrending': Text
       },
 };
 

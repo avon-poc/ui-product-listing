@@ -13,7 +13,6 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "design-components": "file:design-components-v0.0.1.tgz",
     "next": "^11.0.0",
     "nextjs-magnolia-connector": "file:nextjs-magnolia-connector-v0.1.1.tgz",
     "react": "17.0.2",
@@ -40,9 +39,7 @@
     "react-test-renderer": "^17.0.2"
   },
   "resolutions": {
-    "design-web-components": "file:design-web-components-v0.0.3.tgz",
-    "nextjs-magnolia-connector": "file:nextjs-magnolia-connector-v0.1.1.tgz",
-    "ui-icons": "file:ui-icons-v0.0.1.tgz"
+    "nextjs-magnolia-connector": "file:nextjs-magnolia-connector-v0.1.1.tgz"
   },
   "lint-staged": {
     "*.{js,jsx,md,html}": "prettier --write"

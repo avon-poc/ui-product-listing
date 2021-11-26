@@ -1,5 +1,4 @@
 import React, { useEffect, createRef } from 'react';
-import { UiProduct_card, UiHeading } from 'design-components'
 
 import styles from '../../styles/Home.module.scss';
 import { products } from '../../mock/products'
@@ -50,12 +49,12 @@ function Category(props) {
         />
       )}
       <div>
-        <UiHeading label="Make-up" level="h1" />
+        <h1>Make-up</h1>
       </div>
       <div className={styles.product_listing} ref={productsRef}>
         {isParamsNotEmpty(products) ? products.map((product, i) =>
 
-          <UiProduct_card
+          <ui-product_card
             key={i}
             // ! product={product}
             image={product.image}

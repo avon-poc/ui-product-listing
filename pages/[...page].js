@@ -1,47 +1,70 @@
-import { useEffect, createRef } from "react";
 import Head from "next/head";
+import config from "../magnolia.config";
 import styles from "../styles/Home.module.scss";
-import AppHeader from '../src/components/AppHeader'
-import AppFooter from '../src/components/AppFooter'
-
-import Error from '../src/components/Error'
+import dynamic from "next/dynamic";
 import { defineCustomElements } from "shared-web-components/loader";
+import { defineCustomElements as defineFooterElement } from "ui-footer/loader";
+import { useEffect } from "react";
+import { getPage } from "nextjs-magnolia-connector";
+import {
+  createComponent,
+} from "../src/utils";
 
-export { getServerSideProps } from "../src/utils";
+const { EditablePage } = {
+  EditablePage: dynamic(() =>
+    import("nextjs-magnolia-connector").then((module) => module.EditablePage)
+  ),
+};
+export async function getServerSideProps(context) {
+  // const headerComponent = await createComponent("avon-header");
+  // const footerComponent = await createComponent("avon-footer");
+  const page = await getPage(context);
+  return {
+    props: {
+      ...page,
+      headerComponent,
+      footerComponent,
+    },
+  };
+}
 
 export default function App({
-  pageData,
-  errorCode,
-  mainContent,
+  page,
+  templateDefinitions,
   headerComponent,
   footerComponent,
 }) {
-  const cartSidebarRef = createRef();
   useEffect(() => {
     defineCustomElements();
-    cartSidebarRef.current.addEventListener('cart:removeItem', async e => {
-      // const cart = await getCart();
-      // cart.lineItems.pop()
-      // const header = document.querySelector('avon-header')
-      // header.data = { cart: {...cart} }
-    })
-  }, [cartSidebarRef])
+    defineFooterElement();
+  }, []);
+  console.log(",,,pages");
   return (
-    <div data-testid="avon-container" className={styles.container}>
+    <div className={styles.container}>
       <Head>
-        <title>{pageData?.uid || 'Home'} | Avon</title>
+        <title>App</title>
       </Head>
-      <AppHeader headerComponent={headerComponent} />
+      <div
+        className={styles.header}
+        dangerouslySetInnerHTML={{ __html: headerComponent }}
+      />
       <main className={styles.main}>
-        {errorCode
-          ? <Error statusCode={errorCode} />
-          :
-          <div className={styles.magnolia} dangerouslySetInnerHTML={{ __html: mainContent }}></div>
-        }
+        <div className="magnolia">
+          {page && (
+            <EditablePage
+              content={page}
+              config={config}
+              templateDefinitions={templateDefinitions}
+            />
+          )}
+        </div>
       </main>
-      <AppFooter footerComponent={footerComponent} />
-      <bottom-navigation />
-      <cart-sidebar ref={cartSidebarRef} />
+      <div
+        className={styles.footer}
+        dangerouslySetInnerHTML={{ __html: footerComponent }}
+      />
+      <bottom-navigation></bottom-navigation>
+      <cart-sidebar></cart-sidebar>
     </div>
   );
 }
